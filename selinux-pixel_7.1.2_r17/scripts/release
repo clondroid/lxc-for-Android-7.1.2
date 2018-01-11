@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DEST=../selinux-$(date '+%Y%m%d')
+DIRS="libsepol libselinux libsemanage policycoreutils checkpolicy secilc sepolgen"
+
+git tag -a $(date '+%Y%m%d') -m "Release $(date '+%Y%m%d')"
+
+rm -rf $DEST
+mkdir -p $DEST
+
+for i in $DIRS; do
+	cd $i
+	VERS=`cat VERSION`
+	ARCHIVE=$i-$VERS.tar.gz
+	git tag $i-$VERS > /dev/null 2>&1
+	git archive --format=tar --prefix=$i-$VERS/ $i-$VERS | gzip > ../$DEST/$ARCHIVE
+	cd ..
+done
+
+cd $DEST
+
+echo "Copy *.tar.gz from $DEST to the server and add the following to the Releases wiki page:"
+
+echo ""
+
+echo "## Release $(date '+%Y-%m-%d')"
+
+for i in *.tar.gz; do
+
+	echo -n "[$i](https://raw.githubusercontent.com/wiki/SELinuxProject/selinux/files/releases/$(date '+%Y%m%d')/$i) "
+	sha256sum $i | cut -d " " -f 1
+	echo ""
+done

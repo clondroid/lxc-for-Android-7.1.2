@@ -1,0 +1,13 @@
+prefix=@prefix@
+bindir=@BINDIR@
+libdir=${prefix}/@LIBDIR@
+localstatedir=@LOCALSTATEDIR@
+includedir=${prefix}/@INCLUDEDIR@
+rootfsmountdir=@LXCROOTFSMOUNT@
+
+Name: lxc
+Description: linux container tools
+Version: @PACKAGE_VERSION@
+URL: http://linuxcontainers.org
+Libs: -L${libdir} -llxc -lutil
+Cflags: -I${includedir}
