@@ -3,7 +3,7 @@
 #export AR = ${CROSS_COMPILE}ar
 #export RANLIB = ${CROSS_COMPILE}ranlib
 
-export PREFIX = /odm
+export PREFIX = $(ODMDIR)
 
 # Installation directories.
 PREFIX ?= $(DESTDIR)/usr
