@@ -55,7 +55,7 @@ PATH=$PATH:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$PATH
 
 # Tell configure what tools to use.
-BUILD_TARGET_HOST=aarch64-linux-android
+export BUILD_TARGET_HOST=aarch64-linux-android
 export AR=$BUILD_TARGET_HOST-ar
 export AS=$BUILD_TARGET_HOST-clang
 export CC=$BUILD_TARGET_HOST-clang
@@ -70,7 +70,7 @@ export LDFLAGS="-pie"
 
 # SELinux specifics
 BASEDIR=$(pwd)
-export ANDROID_LIBS="$BASEDIR/android-libs/arm_64"
+export ANDROID_LIBS="$BASEDIR/../android-libs/arm_64"
 export CFLAGS="$CFLAGS -I$ANDROID_LIBS/include"
 export LDFLAGS="$LDFLAGS -L$ANDROID_LIBS/lib"
 
@@ -107,7 +107,7 @@ export LDFLAGS="-pie"
 
 # SELinux specifics
 BASEDIR=$(pwd)
-export ANDROID_LIBS="$BASEDIR/android-libs/x86_64"
+export ANDROID_LIBS="$BASEDIR/../android-libs/x86_64"
 export CFLAGS="$CFLAGS -I$ANDROID_LIBS/include"
 export LDFLAGS="$LDFLAGS -L$ANDROID_LIBS/lib"
 
