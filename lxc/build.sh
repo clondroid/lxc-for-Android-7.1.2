@@ -1,7 +1,7 @@
 export CBA_HOME=$ODMDIR
 export PREFIX=$CBA_HOME
 
-#make distclean
+make distclean
 
 ./autogen.sh
 
@@ -15,6 +15,9 @@ CPPFLAGS="$CPPFLAGS $CFLAGS" \
 	--disable-python \
 	--disable-bash \
 	--enable-configpath-log \
+        \
+        --disable-doc \
+        --disable-api-docs \
 	\
 	--prefix=$PREFIX \
 	--with-systemdsystemunitdir=$PREFIX/lib/systemd/system \

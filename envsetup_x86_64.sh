@@ -26,7 +26,7 @@ export LDFLAGS="-pie"
 
 # SELinux specifics
 BASEDIR=$(pwd)
-export ANDROID_LIBS="$BASEDIR/android-libs/x86_64"
+export ANDROID_LIBS="$BASEDIR/../android-libs/x86_64"
 export CFLAGS="$CFLAGS -I$ANDROID_LIBS/include"
 export LDFLAGS="$LDFLAGS -L$ANDROID_LIBS/lib"
 
