@@ -15,7 +15,7 @@ lxc requires some SELinux libs/tools and libcap which is not supported in essent
 
 Before you can start build these packages, please following the steps below to get prepared for compiling.
 
-- git clone this lxc repsoitory source into, say "~/cba/lxc" 
+- git clone this repsoitory (lxc-for-Android-7.1.2) source into, say "~/cba/lxc" 
   - and "~/cba/lxc" will be $LXC_HOME
 - Create the following 2 directories
   - $LXC_HOME/android-libs
