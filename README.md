@@ -25,9 +25,13 @@ Before you can start build these packages, please following the steps below to g
     - This is directory on which lxc tools and libs will be installed
     - You can package this directory on to your Android development device 
 - Install the following essential AOSP include and libraries
-  - copy from your AOSP source 
-    - external/pcre/pcre.h --> ${ANDROID_LIBS}/include/pcre.h
-    - out/target/product/marlin/system/lib64/libpcre.so, libc++.so  --> ${ANDROID_LIBS}/lib/
+  - copy from your AOSP source
+    - arm_64 platform
+      - external/pcre/pcre.h --> ${ANDROID_LIBS}/arm_64/include/pcre.h
+      - out/target/product/marlin/system/lib64/libpcre.so, libc++.so  --> ${ANDROID_LIBS}/arm_64/lib/
+    - x86_64 platform
+      - external/pcre/pcre.h --> ${ANDROID_LIBS}/x86_64/include/pcre.h
+      - out/target/product/xxxooo/system/lib64/libpcre.so, libc++.so  --> ${ANDROID_LIBS}/x86_64/lib/
 - Android NDK 
   - Android container project uses android-ndk-r15b, other NDK (android-ndk-r15b above) release should also work.
   - Install [Android standalone NDK](https://developer.android.com/ndk/guides/standalone_toolchain.html)
